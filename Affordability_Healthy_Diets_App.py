@@ -225,7 +225,7 @@ data_slider = []  # slider for time
 
 # passing over the years
 for year in result['Time'].unique():
-    df_segmented =  result[(result['Time']== year)]
+    df_segmented =  result[(result['Time']== year)].copy()
 
     for col in df_segmented.columns:
         df_segmented[col] = df_segmented[col].astype(str)
