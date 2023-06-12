@@ -15,7 +15,6 @@ import matplotlib.pyplot as plt #interactive visualizations library
 import plotly.express as px # create interactive plots with very little code
 import seaborn as sns #data visualization library
 
-
 # # Data Loading
 
 # In[243]:
@@ -225,7 +224,7 @@ data_slider = []  # slider for time
 
 # passing over the years
 for year in result['Time'].unique():
-    df_segmented =  result[(result['Time']== year)].copy()
+    df_segmented =  result[(result['Time']== year)]
 
     for col in df_segmented.columns:
         df_segmented[col] = df_segmented[col].astype(str)
@@ -646,7 +645,6 @@ st.pyplot(fig)
 
 
 # In[ ]:
-
 
 
 
