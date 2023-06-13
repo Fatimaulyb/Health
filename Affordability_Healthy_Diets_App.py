@@ -208,7 +208,7 @@ st.dataframe(Big_insight)
 rslt_df = Data[Data['Time'] == 2017]
 fig, ax = plt.subplots()
 
-ax.rslt_df.plot(x="Country Name", y='CoHD', grid=True)
+rslt_df.plot(x="Country Name", y='CoHD', grid=True, ax=ax)
 
 plt.xlabel('Countries').set_fontsize(20) 
 plt.ylabel('CoHD').set_fontsize(20)
