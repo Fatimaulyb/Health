@@ -229,8 +229,6 @@ plot0=plot0.figure
 st.pyplot(plot0)
 
 #
-n_large = rslt_df[rslt_df['CoHD'] != 0]
-
 n_large = rslt_df.nlargest(10, ['CoHD'])
 
 plt.pie(n_large['CoHD'], labels = n_large['Country Name'],autopct='%1.2f%%', radius=1000)
