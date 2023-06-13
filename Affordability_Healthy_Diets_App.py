@@ -228,24 +228,6 @@ ax.axhline(y=np.nanmean(rslt_df['CoHD']), color='red', linestyle='--', linewidth
 
 st.pyplot(fig)
 
-#
-n_large = rslt_df.nlargest(10, ['CoHD'])
-
-plt2.pie(n_large['CoHD'], labels = n_large['Country Name'],autopct='%1.2f%%', radius=1000)
-plt2.axis('equal')
-plt2.title('The top ten countries have the highest percentage of people who cannot afford a healthy diet in 2017')
-#plt.show()
-st.pyplot(fig=plt2)
-#
-
-rslt_df2 = Data[Data['Time'] == 2018]
-n_large2 = rslt_df2.nlargest(10, ['CoHD_headcount'])
-plt3.pie(n_large2['CoHD_headcount'], labels = n_large2['Country Name'],autopct='%1.2f%%', radius=1000)
-plt3.axis('equal')
-plt3.title('The top ten countries have the highest percentage of people who cannot afford a healthy diet in 2018')
-#plt.show()
-st.pyplot(fig=plt3)
-
 
 # # insights: 
 #     
