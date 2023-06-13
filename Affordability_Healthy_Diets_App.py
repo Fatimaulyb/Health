@@ -207,7 +207,7 @@ st.dataframe(Big_insight)
 #
 rslt_df = Data[Data['Time'] == 2017]
 
-plot0 = rslt_df.plot(x="Country Name", y='CoHD', figsize=(20, 5), grid=True)
+rslt_df.plot(x="Country Name", y='CoHD', figsize=(20, 5), grid=True)
 
 plt.xlabel('Countries').set_fontsize(20) 
 plt.ylabel('CoHD').set_fontsize(20)
@@ -225,8 +225,7 @@ plt.title("The change in the cost of a healthy diet in various countries in 2017
 plt.axhline(y=np.nanmean(rslt_df['CoHD']), color='red', linestyle='--', linewidth=3, label='Avg')
     
 #plt.show() 
-plot0=plot0.figure
-st.pyplot(plot0)
+st.pyplot(fig=plt)
 
 #
 n_large = rslt_df.nlargest(10, ['CoHD'])
@@ -242,7 +241,7 @@ rslt_df2 = Data[Data['Time'] == 2018]
 n_large2 = rslt_df2.nlargest(10, ['CoHD_headcount'])
 plt.pie(n_large2['CoHD_headcount'], labels = n_large2['Country Name'],autopct='%1.2f%%', radius=1000)
 plt.axis('equal')
-plt.title('The top ten countries have the highest percentage of people who cannot afford a healthy diet in 2017')
+plt.title('The top ten countries have the highest percentage of people who cannot afford a healthy diet in 2018')
 #plt.show()
 st.pyplot(fig=plt)
 
