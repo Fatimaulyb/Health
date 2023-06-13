@@ -246,8 +246,6 @@ plt.pie(n_large2['CoHD_headcount'], labels = n_large2['Country Name'],autopct='%
 plt.axis('equal')
 plt.title('The top ten countries have the highest percentage of people who cannot afford a healthy diet in 2017')
 #plt.show()
-
-plot2=plot2.figure
 st.pyplot(fig=plt)
 
 
