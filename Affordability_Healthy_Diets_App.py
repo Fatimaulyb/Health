@@ -233,24 +233,22 @@ n_large = rslt_df[rslt_df['CoHD'] != 0]
 
 n_large = rslt_df.nlargest(10, ['CoHD'])
 
-plot1 = plt.pie(n_large['CoHD'], labels = n_large['Country Name'],autopct='%1.2f%%', radius=1000)
+plt.pie(n_large['CoHD'], labels = n_large['Country Name'],autopct='%1.2f%%', radius=1000)
 plt.axis('equal')
 plt.title('The top ten countries have the highest percentage of people who cannot afford a healthy diet in 2017')
 #plt.show()
-plot1=plot1.figure
-st.pyplot(plot1)
-
+st.pyplot(fig=plt)
 #
 
 rslt_df2 = Data[Data['Time'] == 2018]
 n_large2 = rslt_df2.nlargest(10, ['CoHD_headcount'])
-plot2 = plt.pie(n_large2['CoHD_headcount'], labels = n_large2['Country Name'],autopct='%1.2f%%', radius=1000)
+plt.pie(n_large2['CoHD_headcount'], labels = n_large2['Country Name'],autopct='%1.2f%%', radius=1000)
 plt.axis('equal')
 plt.title('The top ten countries have the highest percentage of people who cannot afford a healthy diet in 2017')
 #plt.show()
 
 plot2=plot2.figure
-st.pyplot(plot2)
+st.pyplot(fig=plt)
 
 
 # # insights: 
