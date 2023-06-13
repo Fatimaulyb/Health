@@ -207,8 +207,10 @@ st.dataframe(Big_insight)
 #
 rslt_df = Data[Data['Time'] == 2017]
 
-rslt_df.plot(x="Country Name", y='CoHD', figsize=(20, 5), grid=True)
-fig1 = plt.figure()
+rslt_df.plot(x="Country Name", y='CoHD', grid=True)
+
+fig, ax = plt.subplots()
+
 plt.xlabel('Countries').set_fontsize(20) 
 plt.ylabel('CoHD').set_fontsize(20)
   
@@ -218,13 +220,13 @@ avg = round(rslt_df['CoHD'].mean(),2)
 maX = round(rslt_df['CoHD'].max(),2)
 miN = round(rslt_df['CoHD'].min(),2)
 
-plt.text(1, 5, 'Mean value is ' + " "+ str(avg)+ '$', fontsize = 22)
-plt.text(1, 5.5, 'Min value is ' + " " + str(miN)+ '$', fontsize = 22)
-plt.text(1, 4.5, 'Max value is' + " "+ str(maX)+ '$', fontsize = 22)
-plt.title("The change in the cost of a healthy diet in various countries in 2017 ").set_fontsize(20)
-plt.axhline(y=np.nanmean(rslt_df['CoHD']), color='red', linestyle='--', linewidth=3, label='Avg')
+ax.text(1, 5, 'Mean value is ' + " "+ str(avg)+ '$', fontsize = 22)
+ax.text(1, 5.5, 'Min value is ' + " " + str(miN)+ '$', fontsize = 22)
+ax.text(1, 4.5, 'Max value is' + " "+ str(maX)+ '$', fontsize = 22)
+ax.title("The change in the cost of a healthy diet in various countries in 2017 ").set_fontsize(20)
+ax.axhline(y=np.nanmean(rslt_df['CoHD']), color='red', linestyle='--', linewidth=3, label='Avg')
 #plt.show() 
-st.pyplot(fig1)
+st.pyplot(fig)
 
 #
 n_large = rslt_df.nlargest(10, ['CoHD'])
