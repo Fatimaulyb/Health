@@ -208,7 +208,7 @@ st.dataframe(Big_insight)
 rslt_df = Data[Data['Time'] == 2017]
 
 rslt_df.plot(x="Country Name", y='CoHD', figsize=(20, 5), grid=True)
-
+fig1 = plt.figure()
 plt.xlabel('Countries').set_fontsize(20) 
 plt.ylabel('CoHD').set_fontsize(20)
   
@@ -223,9 +223,8 @@ plt.text(1, 5.5, 'Min value is ' + " " + str(miN)+ '$', fontsize = 22)
 plt.text(1, 4.5, 'Max value is' + " "+ str(maX)+ '$', fontsize = 22)
 plt.title("The change in the cost of a healthy diet in various countries in 2017 ").set_fontsize(20)
 plt.axhline(y=np.nanmean(rslt_df['CoHD']), color='red', linestyle='--', linewidth=3, label='Avg')
-    
 #plt.show() 
-st.pyplot(fig=plt)
+st.pyplot(fig1)
 
 #
 n_large = rslt_df.nlargest(10, ['CoHD'])
